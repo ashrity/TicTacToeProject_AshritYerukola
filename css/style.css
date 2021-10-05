@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Merriweather Sans", sans-serif;
+  color: rgb(57, 57, 143);
+}
+
+.wrapper {
+  max-width: 1600px;
+  height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.restart {
+  background-color: rgb(238, 206, 206);
+  width: 175px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid rgb(57, 57, 143);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 35px;
+}
+
+.restart:hover {
+  background-color: rgb(57, 57, 143);
+  color: rgb(238, 206, 206);
+}
+
+.header {
+  color: #9a9a9a;
+  font-size: 30px;
+}
+.header .Player-X {
+  flex: 1;
+  border-left: 5px solid #eee;
+  padding-left: 8px;
+  margin: 10px;
+}
+
+.Player-X.active {
+  font-weight: bolder;
+  color: darkcyan;
+  transition: border-width 0.2s ease-in-out;
+  border-left: 10px solid darkcyan;
+}
+
+.header .Player-O {
+  flex: 1;
+  border-left: 5px solid #eee;
+  padding-left: 8px;
+  margin: 10px;
+}
+
+.Player-O.active {
+  font-weight: bolder;
+  color: darkgoldenrod;
+  transition: border-width 0.2s ease-in-out;
+
+  border-left: 10px solid darkgoldenrod;
+}
+.game {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 500px;
+  margin: 50px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat (3, 1fr);
+  grid-gap: 0px;
+  flex-grow: 1;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.board-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  border: 2px solid rgb(238, 206, 206);
+  cursor: pointer;
+}
+
+.board-tile:hover {
+  background: #eee;
+}
+
+.tile-x {
+  color: darkcyan;
+}
+.tile-o {
+  color: darkgoldenrod;
+}
+.tile-winner span {
+  color: green;
+}
+
+@media only screen and (max-width: 1200px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .left {
+    margin-bottom: 10px;
+  }
+}
